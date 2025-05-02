@@ -119,16 +119,17 @@
         En el caso que una empresa te contratara y asignara un valor de 
         <strong><span id="valor-empleado"></span></strong> para pagarte, deberá tener en cuenta lo siguiente:
       </p>
-      <p><strong>Cesantías (5.20%):</strong> <span id="cesantias"></span></p>
-      <p><strong>Intereses a cesantías (0.62%):</strong> <span id="intereses"></span></p>
-      <p><strong>Prima (5.20%):</strong> <span id="prima"></span></p>
-      <p><strong>Vacaciones (2.60%):</strong> <span id="vacaciones"></span></p>
-      <p><strong>Dotación (5.62%):</strong> <span id="dotacion"></span></p>
+      <p><strong>Cesantías:</strong> <span id="cesantias"></span></p>
+      <p><strong>Intereses a cesantías:</strong> <span id="intereses"></span></p>
+      <p><strong>Prima:</strong> <span id="prima"></span></p>
+      <p><strong>Vacaciones:</strong> <span id="vacaciones"></span></p>
+      <p><strong>Dotación:</strong> <span id="dotacion"></span></p>
 
       <hr>
 
       <h3>Salario si fuera contrato fijo</h3>
       <p><strong>Total de prestaciones (empleador):</strong> <span id="total-fijo"></span></p>
+       <p><strong>Salario como empleado:</strong> <span id="total-real"></span></p>
     </div>
   </div>
 
@@ -171,7 +172,8 @@
       const dotacion = honorarios * 0.0561867898614059;
 
       const totalFijo = cesantias + intereses + prima + vacaciones + dotacion;
-
+      const totalreal = honorarios - totalFijo - total;
+      
       document.getElementById('valor-empleado').textContent = formatter.format(honorarios);
       document.getElementById('cesantias').textContent = formatter.format(cesantias);
       document.getElementById('intereses').textContent = formatter.format(intereses);
@@ -179,7 +181,8 @@
       document.getElementById('vacaciones').textContent = formatter.format(vacaciones);
       document.getElementById('dotacion').textContent = formatter.format(dotacion);
       document.getElementById('total-fijo').textContent = formatter.format(totalFijo);
-
+      document.getElementById('total-real').textContent = formatter.format(totalreal);
+      
       resultado.classList.add('visible');
     }
   </script>
