@@ -29,7 +29,7 @@
       transition: all 0.3s ease-in-out;
     }
 
-    h1, h2 {
+    h1, h2, h3 {
       text-align: center;
       color: #006064;
       margin-bottom: 20px;
@@ -86,6 +86,12 @@
     strong {
       color: #37474f;
     }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 30px 0;
+    }
   </style>
 </head>
 <body>
@@ -104,7 +110,25 @@
       <p><strong>Pensión (16% del IBC):</strong> <span id="pension"></span></p>
       <p><strong>ARL (2.44% del IBC):</strong> <span id="arl"></span></p>
       <p><strong>Total de aportes a SS:</strong> <span id="total"></span></p>
-      <p><strong>Honorario Real:</strong> <span id="honorario-real"></span></p>
+      <p><strong>Honorario libre (después de pagar SS):</strong> <span id="honorario-real"></span></p>
+
+      <hr>
+
+      <h3>¿Cuánto sería tu salario si fueras empleado?</h3>
+      <p>
+        En el caso que una empresa te contratara y asignara un valor de 
+        <strong><span id="valor-empleado"></span></strong> para pagarte, deberá tener en cuenta lo siguiente:
+      </p>
+      <p><strong>Cesantías (5.20%):</strong> <span id="cesantias"></span></p>
+      <p><strong>Intereses a cesantías (0.62%):</strong> <span id="intereses"></span></p>
+      <p><strong>Prima (5.20%):</strong> <span id="prima"></span></p>
+      <p><strong>Vacaciones (2.60%):</strong> <span id="vacaciones"></span></p>
+      <p><strong>Dotación (5.62%):</strong> <span id="dotacion"></span></p>
+
+      <hr>
+
+      <h3>Salario si fuera contrato fijo</h3>
+      <p><strong>Total de prestaciones (empleador):</strong> <span id="total-fijo"></span></p>
     </div>
   </div>
 
@@ -131,12 +155,30 @@
         minimumFractionDigits: 2
       });
 
+      // Mostrar aportes como independiente
       document.getElementById('ibc').textContent = formatter.format(ibc);
       document.getElementById('salud').textContent = formatter.format(salud);
       document.getElementById('pension').textContent = formatter.format(pension);
       document.getElementById('arl').textContent = formatter.format(arl);
       document.getElementById('total').textContent = formatter.format(total);
       document.getElementById('honorario-real').textContent = formatter.format(honorarioReal);
+
+      // Cálculos como si fuera empleado
+      const cesantias = honorarios * 0.0520039955050568;
+      const intereses = honorarios * 0.00624297665126732;
+      const prima = honorarios * 0.0520039955050568;
+      const vacaciones = honorarios * 0.0260332126357847;
+      const dotacion = honorarios * 0.0561867898614059;
+
+      const totalFijo = cesantias + intereses + prima + vacaciones + dotacion;
+
+      document.getElementById('valor-empleado').textContent = formatter.format(honorarios);
+      document.getElementById('cesantias').textContent = formatter.format(cesantias);
+      document.getElementById('intereses').textContent = formatter.format(intereses);
+      document.getElementById('prima').textContent = formatter.format(prima);
+      document.getElementById('vacaciones').textContent = formatter.format(vacaciones);
+      document.getElementById('dotacion').textContent = formatter.format(dotacion);
+      document.getElementById('total-fijo').textContent = formatter.format(totalFijo);
 
       resultado.classList.add('visible');
     }
