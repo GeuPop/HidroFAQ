@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seguridad Social en Colombia</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #0056b3;
+    }
+    h2 {
+      text-align: center;
+      color: #00796b;
+    }
+    label {
+      font-size: 18px;
+      display: block;
+      margin: 10px 0;
+    }
+    input[type="number"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 100%;
+      max-width: 300px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #00796b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      width: 100%;
+      max-width: 300px;
+      margin: 10px 0;
+    }
+    button:hover {
+      background-color: #004d40;
+    }
+    .result {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Seguridad Social en Colombia</h1>
+  <h2>¿Cuál es mi salario real en un contrato de prestación de servicios?</h2>
+
+  <label for="honorarios">Ingrese aquí sus honorarios mensuales:</label>
+  <input type="number" id="honorarios" placeholder="Honorarios mensuales" oninput="calcular()">
+
+  <div class="result" id="resultado">
+    <p><strong>IBC (40% del valor):</strong> <span id="ibc"></span></p>
+    <p><strong>Aportes a Salud (12.5% del IBC):</strong> <span id="salud"></span></p>
+    <p><strong>Pensión (16% del IBC):</strong> <span id="pension"></span></p>
+    <p><strong>ARL (2.44% del IBC):</strong> <span id="arl"></span></p>
+    <p><strong>Total de aportes a SS (Salud + Pensión + ARL):</strong> <span id="total"></span></p>
+    <p><strong>Honorario Real (Valor - Total de Aportes a SS):</strong> <span id="honorario-real"></span></p>
+  </div>
+
+  <script>
+    function calcular() {
+      const honorarios = parseFloat(document.getElementById('honorarios').value);
+      
+      if (isNaN(honorarios) || honorarios <= 0) {
+        document.getElementById('resultado').style.display = 'none';
+        return;
+      }
+      
+      // Cálculos
+      const ibc = honorarios * 0.4;
+      const salud = ibc * 0.125;
+      const pension = ibc * 0.16;
+      const arl = ibc * 0.0244;
+      const total = salud + pension + arl;
+      const honorarioReal = honorarios - total;
+
+      // Mostrar resultados
+      document.getElementById('ibc').textContent = ibc.toFixed(2);
+      document.getElementById('salud').textContent = salud.toFixed(2);
+      document.getElementById('pension').textContent = pension.toFixed(2);
+      document.getElementById('arl').textContent = arl.toFixed(2);
+      document.getElementById('total').textContent = total.toFixed(2);
+      document.getElementById('honorario-real').textContent = honorarioReal.toFixed(2);
+
+      // Mostrar resultados en la página
+      document.getElementById('resultado').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
