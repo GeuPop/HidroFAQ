@@ -3,45 +3,32 @@
 
 <head>
 <meta charset="UTF-8">
-
 <title>Hidrología UdeA</title>
-
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
 <header>
-
 <h1>Hidrología UdeA</h1>
-
 <button onclick="goHome()">Inicio</button>
-
 </header>
-
 
 <section id="home">
 
 <h2>Bienvenidos</h2>
 
 <p>
-Aquí podrá consultar dudas respecto a diferentes temas de hidrología y clima.
+Aquí podrás consultar información importante respecto al curso y dudas que surgan en materia de Hidrología y Clima.
 </p>
 
 <div class="menu">
 
-<button class="btn notas" onclick="goNotas()">
-Notas
-</button>
+<button class="btn notas" onclick="goNotas()">Notas</button>
 
-<button class="btn dudas" onclick="showDudas()">
-Dudas frecuentes
-</button>
+<button class="btn dudas" onclick="showDudas()">Dudas frecuentes</button>
 
-<button class="btn enlaces" onclick="showLinks()">
-Enlaces de interés
-</button>
+<button class="btn enlaces" onclick="showLinks()">Enlaces de interés</button>
 
 </div>
 
@@ -52,10 +39,7 @@ Enlaces de interés
 
 <h2>Dudas frecuentes</h2>
 
-<button class="parcial" onclick="toggle('p1')">
-Parcial 1
-</button>
-
+<button class="parcial" onclick="toggle('p1')">Parcial 1</button>
 
 <div id="p1" class="faq hidden">
 
@@ -78,7 +62,7 @@ Si necesitas cambiar el sistema de coordenadas de un shapefile usa la herramient
 <h3>Reproyección de Raster</h3>
 
 <p>
-Para reproyectar un raster debes usar la herramienta Warp o Reproject Raster según el software.
+Si necesitas reproyectar un raster usa la herramienta Warp o Reproject Raster.
 </p>
 
 <img src="images/Trans2.jpeg" class="faq-image">
@@ -90,10 +74,7 @@ Para reproyectar un raster debes usar la herramienta Warp o Reproject Raster seg
 </div>
 
 
-
-<button class="parcial" onclick="toggle('p2')">
-Parcial 2
-</button>
+<button class="parcial" onclick="toggle('p2')">Parcial 2</button>
 
 <div id="p2" class="faq hidden">
 
@@ -102,10 +83,7 @@ Parcial 2
 </div>
 
 
-
-<button class="parcial" onclick="toggle('p3')">
-Parcial 3
-</button>
+<button class="parcial" onclick="toggle('p3')">Parcial 3</button>
 
 <div id="p3" class="faq hidden">
 
@@ -116,35 +94,21 @@ Parcial 3
 </section>
 
 
-
 <section id="links" class="hidden">
 
 <h2>Enlaces de interés</h2>
 
 <ul>
 
-<li>
-<a href="https://www.ideam.gov.co" target="_blank">
-IDEAM
-</a>
-</li>
+<li><a href="https://www.ideam.gov.co" target="_blank">IDEAM</a></li>
 
-<li>
-<a href="https://climate.gov" target="_blank">
-NOAA Climate
-</a>
-</li>
+<li><a href="https://climate.gov" target="_blank">NOAA Climate</a></li>
 
-<li>
-<a href="https://earthdata.nasa.gov" target="_blank">
-NASA Earth Data
-</a>
-</li>
+<li><a href="https://earthdata.nasa.gov" target="_blank">NASA Earth Data</a></li>
 
 </ul>
 
 </section>
-
 
 <script src="script.js"></script>
 
