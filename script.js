@@ -1,51 +1,190 @@
-function toggle(id) {
+body{
 
-const element = document.getElementById(id);
+font-family: Arial;
 
-if (element.classList.contains("hidden")) {
-element.classList.remove("hidden");
-} else {
-element.classList.add("hidden");
-}
+margin:0;
 
-}
+background:linear-gradient(135deg,#0f3d66,#1e6aa8);
 
-
-function goHome(){
-
-document.getElementById("home").classList.remove("hidden");
-
-document.getElementById("dudas").classList.add("hidden");
-
-document.getElementById("links").classList.add("hidden");
+color:white;
 
 }
 
 
-function showDudas(){
+header{
 
-document.getElementById("home").classList.add("hidden");
+display:flex;
 
-document.getElementById("dudas").classList.remove("hidden");
+justify-content:space-between;
 
-document.getElementById("links").classList.add("hidden");
+align-items:center;
 
-}
+padding:15px 40px;
 
-
-function showLinks(){
-
-document.getElementById("home").classList.add("hidden");
-
-document.getElementById("dudas").classList.add("hidden");
-
-document.getElementById("links").classList.remove("hidden");
+background:#0b2e4d;
 
 }
 
 
-function goNotas(){
+header button{
 
-window.location.href="TU_LINK_DE_NOTAS_AQUI";
+background:#1e90ff;
+
+border:none;
+
+padding:10px 20px;
+
+color:white;
+
+border-radius:6px;
+
+cursor:pointer;
+
+}
+
+
+section{
+
+padding:40px;
+
+text-align:center;
+
+}
+
+
+.menu{
+
+margin-top:40px;
+
+}
+
+
+.btn{
+
+display:block;
+
+margin:20px auto;
+
+padding:20px;
+
+width:300px;
+
+font-size:18px;
+
+border:none;
+
+border-radius:10px;
+
+cursor:pointer;
+
+color:white;
+
+}
+
+
+.notas{
+
+background:#4da6ff;
+
+}
+
+
+.dudas{
+
+background:#00c2a8;
+
+}
+
+
+.enlaces{
+
+background:#6c8cff;
+
+}
+
+
+.parcial{
+
+margin:20px;
+
+padding:12px 25px;
+
+border:none;
+
+border-radius:6px;
+
+background:#2b7bb9;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+
+.question{
+
+margin-top:20px;
+
+}
+
+
+.question button{
+
+padding:10px;
+
+border:none;
+
+background:#1e5f95;
+
+color:white;
+
+border-radius:6px;
+
+cursor:pointer;
+
+}
+
+
+.answer{
+
+margin-top:10px;
+
+background:#1f4f7a;
+
+padding:15px;
+
+border-radius:6px;
+
+text-align:left;
+
+}
+
+
+.hidden{
+
+display:none;
+
+}
+
+
+a{
+
+color:#a8d0ff;
+
+}
+
+
+.faq-image{
+
+width:100%;
+
+max-width:600px;
+
+margin-top:12px;
+
+border-radius:8px;
+
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
 
 }
