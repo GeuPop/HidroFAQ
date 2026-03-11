@@ -24,7 +24,7 @@ document.getElementById("links").classList.remove("hidden");
 
 function goNotas(){
 
-alert("Aquí puedes poner el enlace a las notas del curso");
+window.location.href = "https://geupop.github.io/HidrologiaUdeA/";
 
 }
 
