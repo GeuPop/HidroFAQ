@@ -24,7 +24,7 @@ document.getElementById("links").classList.remove("hidden");
 
 function goNotas(){
 
-window.location.href = "https://geupop.github.io/HidrologiaUdeA/";
+window.open("https://geupop.github.io/HidrologiaUdeA/", "_blank");
 
 }
 
