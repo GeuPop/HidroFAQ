@@ -1,41 +1,51 @@
-function goHome(){
+function toggle(id) {
 
-document.getElementById("home").style.display="block"
-document.getElementById("dudas").style.display="none"
-document.getElementById("links").style.display="none"
+const element = document.getElementById(id);
+
+if (element.classList.contains("hidden")) {
+element.classList.remove("hidden");
+} else {
+element.classList.add("hidden");
+}
 
 }
+
+
+function goHome(){
+
+document.getElementById("home").classList.remove("hidden");
+
+document.getElementById("dudas").classList.add("hidden");
+
+document.getElementById("links").classList.add("hidden");
+
+}
+
 
 function showDudas(){
 
-document.getElementById("home").style.display="none"
-document.getElementById("dudas").style.display="block"
-document.getElementById("links").style.display="none"
+document.getElementById("home").classList.add("hidden");
+
+document.getElementById("dudas").classList.remove("hidden");
+
+document.getElementById("links").classList.add("hidden");
 
 }
+
 
 function showLinks(){
 
-document.getElementById("home").style.display="none"
-document.getElementById("dudas").style.display="none"
-document.getElementById("links").style.display="block"
+document.getElementById("home").classList.add("hidden");
+
+document.getElementById("dudas").classList.add("hidden");
+
+document.getElementById("links").classList.remove("hidden");
 
 }
 
-function toggle(id){
-
-let e=document.getElementById(id)
-
-if(e.classList.contains("hidden")){
-e.classList.remove("hidden")
-}else{
-e.classList.add("hidden")
-}
-
-}
 
 function goNotas(){
 
-window.location.href="AQUI_TU_LINK_DE_GITHUB"
+window.location.href="TU_LINK_DE_NOTAS_AQUI";
 
 }
