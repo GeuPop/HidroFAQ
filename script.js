@@ -1,49 +1,45 @@
 function goHome(){
 
 document.getElementById("home").classList.remove("hidden");
-
 document.getElementById("dudas").classList.add("hidden");
-
 document.getElementById("links").classList.add("hidden");
 
 }
-
-
 
 function showDudas(){
 
 document.getElementById("home").classList.add("hidden");
-
 document.getElementById("dudas").classList.remove("hidden");
-
 document.getElementById("links").classList.add("hidden");
 
 }
 
-
-
 function showLinks(){
 
 document.getElementById("home").classList.add("hidden");
-
 document.getElementById("dudas").classList.add("hidden");
-
 document.getElementById("links").classList.remove("hidden");
 
 }
 
+function goNotas(){
 
-
-function toggle(id){
-
-document.getElementById(id).classList.toggle("hidden");
+alert("Aquí puedes poner el enlace a las notas del curso");
 
 }
 
+function toggle(id){
 
+var element=document.getElementById(id);
 
-function goNotas(){
+if(element.classList.contains("hidden")){
 
-window.location.href="https://TU-PAGINA-DE-NOTAS-AQUI";
+element.classList.remove("hidden");
+
+}else{
+
+element.classList.add("hidden");
+
+}
 
 }
