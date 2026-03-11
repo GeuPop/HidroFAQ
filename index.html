@@ -2,9 +2,14 @@
 <html lang="es">
 
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Hidrología UdeA</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 
@@ -12,33 +17,50 @@
 
 <body>
 
-<header>
-<h1>Hidrología UdeA</h1>
-<button onclick="goHome()">Inicio</button>
+<div class="background"></div>
+
+<header class="topbar">
+
+<h1><i class="fas fa-water"></i> Hidrología UdeA</h1>
+
+<button onclick="goHome()">
+<i class="fas fa-home"></i> Inicio
+</button>
+
 </header>
 
-<section id="home">
+
+<section id="home" class="section active">
 
 <h2>Bienvenidos</h2>
 
-<p>
+<p class="intro">
 Aquí podrás consultar información importante respecto al curso y dudas que surjan en materia de Hidrología y Clima.
 </p>
 
 <div class="menu">
 
-<button class="btn notas" onclick="goNotas()">Notas</button>
+<button class="card-btn notas" onclick="goNotas()">
+<i class="fas fa-chart-line"></i>
+<span>Notas</span>
+</button>
 
-<button class="btn dudas" onclick="showDudas()">Dudas frecuentes</button>
+<button class="card-btn dudas" onclick="showDudas()">
+<i class="fas fa-question-circle"></i>
+<span>Dudas frecuentes</span>
+</button>
 
-<button class="btn enlaces" onclick="showLinks()">Enlaces de interés</button>
+<button class="card-btn enlaces" onclick="showLinks()">
+<i class="fas fa-link"></i>
+<span>Enlaces de interés</span>
+</button>
 
 </div>
 
 </section>
 
 
-<section id="dudas" class="hidden">
+<section id="dudas" class="section hidden">
 
 <h2>Dudas frecuentes</h2>
 
@@ -82,19 +104,23 @@ Si necesitas reproyectar un raster debes usar la herramienta de reproyección ra
 </section>
 
 
-<section id="links" class="hidden">
+<section id="links" class="section hidden">
 
 <h2>Enlaces de interés</h2>
 
-<ul>
-<li><a href="#">NOAA Climate</a></li>
-<li><a href="#">IDEAM</a></li>
-<li><a href="#">NASA Earth Data</a></li>
+<ul class="links">
+
+<li><a href="https://www.climate.gov" target="_blank">NOAA Climate</a></li>
+
+<li><a href="https://www.ideam.gov.co" target="_blank">IDEAM</a></li>
+
+<li><a href="https://earthdata.nasa.gov" target="_blank">NASA Earth Data</a></li>
+
 </ul>
 
 </section>
 
-<script src="script.js?v=3"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
