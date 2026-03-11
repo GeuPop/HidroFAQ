@@ -115,15 +115,24 @@ gap:25px;
 
 .card-btn{
 
-background:var(--card);
+width:100%;
+max-width:420px;
 
-border:none;
+margin:auto;
 
 padding:30px;
 
-border-radius:16px;
+border:none;
 
-font-size:1.1rem;
+border-radius:28px;
+
+background:linear-gradient(135deg,#1e90ff,#084d9a);
+
+color:white;
+
+font-size:1.25rem;
+
+font-weight:600;
 
 cursor:pointer;
 
@@ -133,17 +142,29 @@ flex-direction:column;
 
 align-items:center;
 
-gap:10px;
+gap:12px;
 
-color:white;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
 
-transition:0.25s;
+transition:all 0.25s ease;
+
+text-shadow:0 2px 4px rgba(0,0,0,0.5);
 
 }
 
 .card-btn i{
 
-font-size:1.6rem;
+font-size:1.9rem;
+
+}
+
+.card-btn:hover{
+
+transform:translateY(-4px) scale(1.03);
+
+box-shadow:0 14px 30px rgba(0,0,0,0.6);
+
+background:linear-gradient(135deg,#2aa3ff,#0a5fc2);
 
 }
 
