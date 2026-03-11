@@ -1,190 +1,49 @@
-body{
+function goHome(){
 
-font-family: Arial;
+document.getElementById("home").classList.remove("hidden");
 
-margin:0;
+document.getElementById("dudas").classList.add("hidden");
 
-background:linear-gradient(135deg,#0f3d66,#1e6aa8);
-
-color:white;
+document.getElementById("links").classList.add("hidden");
 
 }
 
 
-header{
 
-display:flex;
+function showDudas(){
 
-justify-content:space-between;
+document.getElementById("home").classList.add("hidden");
 
-align-items:center;
+document.getElementById("dudas").classList.remove("hidden");
 
-padding:15px 40px;
-
-background:#0b2e4d;
+document.getElementById("links").classList.add("hidden");
 
 }
 
 
-header button{
 
-background:#1e90ff;
+function showLinks(){
 
-border:none;
+document.getElementById("home").classList.add("hidden");
 
-padding:10px 20px;
+document.getElementById("dudas").classList.add("hidden");
 
-color:white;
-
-border-radius:6px;
-
-cursor:pointer;
+document.getElementById("links").classList.remove("hidden");
 
 }
 
 
-section{
 
-padding:40px;
+function toggle(id){
 
-text-align:center;
-
-}
-
-
-.menu{
-
-margin-top:40px;
+document.getElementById(id).classList.toggle("hidden");
 
 }
 
 
-.btn{
 
-display:block;
+function goNotas(){
 
-margin:20px auto;
-
-padding:20px;
-
-width:300px;
-
-font-size:18px;
-
-border:none;
-
-border-radius:10px;
-
-cursor:pointer;
-
-color:white;
-
-}
-
-
-.notas{
-
-background:#4da6ff;
-
-}
-
-
-.dudas{
-
-background:#00c2a8;
-
-}
-
-
-.enlaces{
-
-background:#6c8cff;
-
-}
-
-
-.parcial{
-
-margin:20px;
-
-padding:12px 25px;
-
-border:none;
-
-border-radius:6px;
-
-background:#2b7bb9;
-
-color:white;
-
-cursor:pointer;
-
-}
-
-
-.question{
-
-margin-top:20px;
-
-}
-
-
-.question button{
-
-padding:10px;
-
-border:none;
-
-background:#1e5f95;
-
-color:white;
-
-border-radius:6px;
-
-cursor:pointer;
-
-}
-
-
-.answer{
-
-margin-top:10px;
-
-background:#1f4f7a;
-
-padding:15px;
-
-border-radius:6px;
-
-text-align:left;
-
-}
-
-
-.hidden{
-
-display:none;
-
-}
-
-
-a{
-
-color:#a8d0ff;
-
-}
-
-
-.faq-image{
-
-width:100%;
-
-max-width:600px;
-
-margin-top:12px;
-
-border-radius:8px;
-
-box-shadow:0 4px 10px rgba(0,0,0,0.3);
+window.location.href="https://TU-PAGINA-DE-NOTAS-AQUI";
 
 }
