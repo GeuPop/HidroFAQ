@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+
+<meta charset="UTF-8">
+<title>Hidrología UdeA</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+<h1>Hidrología UdeA</h1>
+<button onclick="goHome()">Inicio</button>
+</header>
+
+<section id="home">
+
+<h2>Bienvenidos</h2>
+
+<p>
+Aquí podrás consultar información importante respecto al curso y dudas que surjan en materia de Hidrología y Clima.
+</p>
+
+<div class="menu">
+
+<button class="btn notas" onclick="goNotas()">Notas</button>
+
+<button class="btn dudas" onclick="showDudas()">Dudas frecuentes</button>
+
+<button class="btn enlaces" onclick="showLinks()">Enlaces de interés</button>
+
+</div>
+
+</section>
+
+
+<section id="dudas" class="hidden">
+
+<h2>Dudas frecuentes</h2>
+
+<button class="parcial" onclick="toggle('p1')">Parcial 1</button>
+
+<div id="p1" class="faq hidden">
+
+<div class="question">
+
+<button onclick="toggle('q1')">
++ ¿Cómo cambio un sistema de coordenadas?
+</button>
+
+<div id="q1" class="answer hidden">
+
+<p>
+Si necesitas cambiar el sistema de coordenadas de un shapefile (por ejemplo de WGS84 a MAGNA Colombia Bogotá), usa la herramienta de reproyección del SIG.
+</p>
+
+<img src="images/Trans1.jpeg" class="faq-image">
+
+<p>
+Si necesitas reproyectar un raster debes usar la herramienta de reproyección raster.
+</p>
+
+<img src="images/Trans2.jpeg" class="faq-image">
+
+</div>
+
+</div>
+
+</div>
+
+
+<button class="parcial" onclick="toggle('p2')">Parcial 2</button>
+<div id="p2" class="faq hidden"></div>
+
+<button class="parcial" onclick="toggle('p3')">Parcial 3</button>
+<div id="p3" class="faq hidden"></div>
+
+</section>
+
+
+<section id="links" class="hidden">
+
+<h2>Enlaces de interés</h2>
+
+<ul>
+<li><a href="#">NOAA Climate</a></li>
+<li><a href="#">IDEAM</a></li>
+<li><a href="#">NASA Earth Data</a></li>
+</ul>
+
+</section>
+
+<script src="script.js?v=3"></script>
+
+</body>
+</html>
